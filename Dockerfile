@@ -3,7 +3,7 @@
 # (railway up rejects bundles over ~500 MB). Every file under public/ is served at the same path.
 FROM alpine:3.20 AS assets
 ARG REPO=jamesmednick-jpg/mls-image-host
-ARG COMMIT=8198fd1453fe7a795fea9414672e63b4e06b1fb2
+ARG COMMIT=100e8df2fad212622dc016b327c2736e5be7e0a3
 RUN apk add --no-cache curl tar \
  && curl -fsSL "https://codeload.github.com/${REPO}/tar.gz/${COMMIT}" -o /tmp/src.tgz \
  && mkdir -p /src && tar -xzf /tmp/src.tgz -C /src --strip-components=1 && rm /tmp/src.tgz \
